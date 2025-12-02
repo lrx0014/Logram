@@ -7,19 +7,19 @@ from evaluator import evaluate
 HDFS_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>'  # HDFS log format
 Andriod_format = '<Date> <Time>  <Pid>  <Tid> <Level> <Component>: <Content>' #Andriod log format
 Spark_format = '<Date> <Time> <Level> <Component>: <Content>'#Spark log format
-Zookeeper_format = '<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>' #Zookeeper log format
+Zookeeper_format = r'<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>' #Zookeeper log format
 Windows_format = '<Date> <Time>, <Level>                  <Component>    <Content>' #Windows log format
-Thunderbird_format = '<Label> <Timestamp> <Date> <User> <Month> <Day> <Time> <Location> <Component>(\[<PID>\])?: <Content>' #Thunderbird_format
-Apache_format = '\[<Time>\] \[<Level>\] <Content>' #Apache format
+Thunderbird_format = r'<Label> <Timestamp> <Date> <User> <Month> <Day> <Time> <Location> <Component>(\[<PID>\])?: <Content>' #Thunderbird_format
+Apache_format = r'\[<Time>\] \[<Level>\] <Content>' #Apache format
 BGL_format = '<Label> <Timestamp> <Date> <Node> <Time> <NodeRepeat> <Type> <Component> <Level> <Content>' #BGL format
-Hadoop_format = '<Date> <Time> <Level> \[<Process>\] <Component>: <Content>' #Hadoop format
+Hadoop_format = r'<Date> <Time> <Level> \[<Process>\] <Component>: <Content>' #Hadoop format
 HPC_format = '<LogId> <Node> <Component> <State> <Time> <Flag> <Content>' #HPC format
-Linux_format = '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>' #Linux format
-Mac_format = '<Month>  <Date> <Time> <User> <Component>\[<PID>\]( \(<Address>\))?: <Content>' #Mac format
-OpenSSH_format = '<Date> <Day> <Time> <Component> sshd\[<Pid>\]: <Content>' #OpenSSH format
-OpenStack_format = '<Logrecord> <Date> <Time> <Pid> <Level> <Component> \[<ADDR>\] <Content>' #OpenStack format
-HealthApp_format = '<Time>\|<Component>\|<Pid>\|<Content>'
-Proxifier_format = '\[<Time>\] <Program> - <Content>'
+Linux_format = r'<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>' #Linux format
+Mac_format = r'<Month>  <Date> <Time> <User> <Component>\[<PID>\]( \(<Address>\))?: <Content>' #Mac format
+OpenSSH_format = r'<Date> <Day> <Time> <Component> sshd\[<Pid>\]: <Content>' #OpenSSH format
+OpenStack_format = r'<Logrecord> <Date> <Time> <Pid> <Level> <Component> \[<ADDR>\] <Content>' #OpenStack format
+HealthApp_format = r'<Time>\|<Component>\|<Pid>\|<Content>'
+Proxifier_format = r'\[<Time>\] <Program> - <Content>'
 
 
 def test_parsing(name, log_format, regex, double_threshold, trible_threshold, path_to_log, path_to_structured_log, path_to_template):

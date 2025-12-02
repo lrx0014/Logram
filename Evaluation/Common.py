@@ -31,7 +31,7 @@ def regexGenerator(logformat):
     regex = ''
     for k in range(len(splitters)):
         if k % 2 == 0:
-            splitter = re.sub(' +', '\\\s+', splitters[k])
+            splitter = re.sub(r' +', r'\\s+', splitters[k])
             regex += splitter
         else:
             header = splitters[k].strip('<').strip('>')
@@ -39,4 +39,3 @@ def regexGenerator(logformat):
             headers.append(header)
     regex = re.compile('^' + regex + '$')
     return regex
-
