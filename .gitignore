@@ -1,0 +1,7 @@
+# Ignore generated logs and outputs
+test_logs/
+Output/
+# Bytecode cache
+__pycache__/
+# macOS Finder artifacts
+.DS_Store
